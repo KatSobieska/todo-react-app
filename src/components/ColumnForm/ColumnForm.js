@@ -13,12 +13,18 @@ const ColumnForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      Title: <input
+      Title:{" "}
+      <input
         type="text"
         value={value}
         onChange={(e) => setTitle(e.target.value)}
       />
-      Icon: <input type='text'  value={icon} onChange={e => setIcon(e.target.value)}/>
+      Icon:{" "}
+      <input
+        type="text"
+        value={icon}
+        onChange={(e) => setIcon(e.target.value)}
+      />
       <button>Add column</button>
     </form>
   );
