@@ -4,33 +4,22 @@ import TextInput from "../TextInput/TextInput.js";
 import { useState } from "react";
 
 const ColumnForm = (props) => {
-  const [value, setTitle] = useState("");
+  const [title, setTitle] = useState("");
   const [icon, setIcon] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.action({ title: value, icon: icon });
+    props.action({ title: title, icon: icon });
     setTitle("");
     setIcon("");
   };
 
-  const TextInput = (props) => {
-    return (
-      <input
-        className={styles.input}
-        value={props.value}
-        onChange={props.onChange}
-        placeholder={props.placeholder}
-        type="text"
-      />
-    );
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
-      Title:
-      <TextInput placeholder="Title..." />
-      Icon:
-      <TextInput placeholder="Icon..." />
+    <form className={styles.columnForm} onSubmit={handleSubmit}>
+      <span>Title:</span>{" "}
+      <TextInput value={title} onChange={(e) => setTitle(e.target.value)} />
+      <span>Icon:</span>{" "}
+      <TextInput value={icon} onChange={(e) => setIcon(e.target.value)} />
       <Button>Add column</Button>
     </form>
   );
