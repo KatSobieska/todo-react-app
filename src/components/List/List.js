@@ -1,9 +1,8 @@
 import styles from "./List.module.scss";
 import Column from "../Column/Column.js";
-import ColumnForm from '../ColumnForm/ColumnForm.js';
+import ColumnForm from "../ColumnForm/ColumnForm.js";
 import { useState } from "react";
-import shortid from 'shortid';
-
+import shortid from "shortid";
 
 const List = () => {
   const [columns, setColumns] = useState([
@@ -12,9 +11,12 @@ const List = () => {
     { id: 3, title: "Games", icon: "gamepad" },
   ]);
 
-  const addColumn = newColumn => {
-    setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon }]);
-};
+  const addColumn = (newColumn) => {
+    setColumns([
+      ...columns,
+      { id: shortid(), title: newColumn.title, icon: newColumn.icon },
+    ]);
+  };
 
   return (
     <div className={styles.list}>
