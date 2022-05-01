@@ -3,11 +3,11 @@ import shortid from "shortid";
 import initialState from "./initialState";
 
 //selectors
-export const getFilteredCards = (state, columnId) =>
-  state.cards.filter(
+export const getFilteredCards = ({ cards, searchString }, columnId) =>
+  cards.filter(
     (card) =>
       card.columnId === columnId &&
-      card.title.toLowerCase().includes(state.searchString.toLowerCase())
+      card.title.toLowerCase().includes(searchString.toLowerCase())
   );
 
 const reducer = (state, action) => {
