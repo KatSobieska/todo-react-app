@@ -4,8 +4,12 @@ import CardForm from "../CardForm/CardForm.js";
 import { useSelector } from "react-redux";
 
 const Column = (props) => {
+  const searchString = useSelector((state) => state.searchString);
+  console.log("search", searchString);
   const cards = useSelector((state) => state.cards).filter(
-    (card) => card.columnId === props.id
+    (card) =>
+      card.columnId === props.id &&
+      card.title.toLowerCase().includes(searchString.toLowerCase())
   );
 
   return (
