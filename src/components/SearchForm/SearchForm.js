@@ -5,6 +5,15 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 const SearchForm = () => {
+  const [searchString, setSearchString] = useState("");
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: "UPDATE_SEARCHSTRING", searchString });
+  };
+
   return (
     <form className={styles.searchForm}>
       <TextInput placeholder="Search..." />
