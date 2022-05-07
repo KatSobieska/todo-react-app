@@ -1,12 +1,14 @@
 import styles from "./SearchForm.module.scss";
 import TextInput from "../TextInput/TextInput.js";
 import Button from "../Button/Button.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { updateSearchString } from "../../redux/store";
+import { getSearchString, updateSearchString } from "../../redux/store";
 
 const SearchForm = () => {
-  const [searchString, setSearchString] = useState("");
+  const currentSearchString = useSelector(getSearchString);
+
+  const [searchString, setSearchString] = useState(currentSearchString);
 
   const dispatch = useDispatch();
 
@@ -20,6 +22,7 @@ const SearchForm = () => {
       <TextInput
         placeholder="Search..."
         searchString={searchString.toString()}
+        value={searchString}
         onChange={(e) => setSearchString(e.target.value.toString())}
       />
       <Button>
