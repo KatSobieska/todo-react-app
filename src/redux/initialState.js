@@ -39,7 +39,7 @@ const initialState = {
     {
       id: 1,
       title: "Things to do...",
-      description: "Interesting thinkgs I want to check out",
+      description: "Interesting things I want to check out",
     },
     {
       id: 2,
