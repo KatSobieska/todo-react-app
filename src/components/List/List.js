@@ -6,7 +6,7 @@ import { getColumnsByList } from "../../redux/store";
 import { getListById } from "../../redux/store";
 import { useParams } from "react-router-dom";
 
-const List = () => {
+const List = (props) => {
   const { listId } = useParams();
   const columns = useSelector((state) => getColumnsByList(state, listId));
   const listData = useSelector((state) => getListById(state, listId));
@@ -22,7 +22,7 @@ const List = () => {
           <Column key={column.id} {...column} />
         ))}
       </section>
-      <ColumnForm />
+      <ColumnForm listId={listId} />
     </div>
   );
 };
