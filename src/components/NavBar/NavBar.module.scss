@@ -1,0 +1,22 @@
+@import "../../styles/settings.scss";
+
+.navbar {
+  background-color: darken($color-dark, 3%);
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  align-items: center;
+}
+
+span {
+  margin-left: 15px;
+}
+
+.list {
+  list-style: none;
+  display: inline-flex;
+
+  li {
+    margin-right: 15px;
+  }
+}
