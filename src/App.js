@@ -3,15 +3,18 @@ import Container from "./components/Container/Container.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import About from "./components/About/About.js";
 import Favorite from "./components/Favorite/Favorite.js";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <main>
       <NavBar />
       <Container>
-        <Home />
-        <About />
-        <Favorite />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/" element={<About />} />
+          <Route path="/" element={<Favorite />} />
+        </Routes>
       </Container>
     </main>
   );
