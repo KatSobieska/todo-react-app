@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar.js";
 import About from "./components/About/About.js";
 import Favorite from "./components/Favorite/Favorite.js";
 import { Routes, Route } from "react-router-dom";
+import PageNotFound from "./components/PageNotFound/PageNotFound.js";
 
 const App = () => {
   return (
@@ -12,8 +13,9 @@ const App = () => {
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<About />} />
-          <Route path="/" element={<Favorite />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/favorite" element={<Favorite />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Container>
     </main>
