@@ -19,6 +19,9 @@ const Favorite = () => {
   return (
     <div className={styles.hero}>
       <PageTitle title="Favorite" />
+      <p className={styles.subtitle}>
+        Your favorites <span className="fa fa-star-o"></span>
+      </p>
       <ul className={styles.column}>
         {favoriteCards.map((card) => (
           <Card
