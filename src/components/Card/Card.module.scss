@@ -1,13 +1,31 @@
-@import '../../styles/settings.scss';
+@import "../../styles/settings.scss";
 
 .card {
-    position: relative;
-    background: $color-light;
-    border: 1px solid lighten($color-dark, 60%);
-    padding: $base-size;
-    margin: 0 0 $base-size 0;
-    border-radius: $radius;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
+  position: relative;
+  background: $color-light;
+  border: 1px solid lighten($color-dark, 60%);
+  padding: $base-size;
+  margin: 0 0 $base-size 0;
+  border-radius: $radius;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.favoriteButton {
+  background-color: $color-light;
+  border: none;
+  span {
+    transition: $transition;
+    font-size: 16px;
+  }
+}
+.favoriteButton:hover {
+  span {
+    transform: scale(1.25);
+  }
+}
+
+.isFavorite {
+  color: $color-favorite-card;
 }
