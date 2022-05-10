@@ -1,21 +1,13 @@
 import { createStore, combineReducers } from "redux";
 import initialState from "./initialState";
-import { strContains } from "../utils/strContains";
 import listsReducer from "./listsRedux";
 import columnsReducer from "./columnsRedux";
 import cardsReducer from "./cardsRedux";
 import searchStringReducer from "./searchStringRedux";
 
 //selectors
-export const getFilteredCards = ({ cards, searchString }, columnId) =>
-  cards.filter(
-    (card) =>
-      card.columnId === columnId && strContains(card.title, searchString)
-  );
 
 export const getSearchString = (state) => state.searchString;
-export const getFavoriteCard = ({ cards }) =>
-  cards.filter((card) => card.isFavorite === true);
 
 //action creators
 
