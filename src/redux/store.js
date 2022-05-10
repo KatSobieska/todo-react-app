@@ -5,10 +5,6 @@ import columnsReducer from "./columnsRedux";
 import cardsReducer from "./cardsRedux";
 import searchStringReducer from "./searchStringRedux";
 
-//selectors
-
-export const getSearchString = (state) => state.searchString;
-
 const subreducers = {
   lists: listsReducer,
   columns: columnsReducer,

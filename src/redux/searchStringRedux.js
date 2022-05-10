@@ -1,3 +1,7 @@
+//selectors
+
+export const getSearchString = (state) => state.searchString;
+
 //action creators
 
 export const updateSearchString = (payload) => ({
