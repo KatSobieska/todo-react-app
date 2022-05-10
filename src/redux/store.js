@@ -18,7 +18,6 @@ export const getFavoriteCard = ({ cards }) =>
   cards.filter((card) => card.isFavorite === true);
 
 //action creators
-export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
 
 export const addCard = (payload) => ({ type: "ADD_CARD", payload });
 
