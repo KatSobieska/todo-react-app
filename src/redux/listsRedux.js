@@ -2,6 +2,8 @@ import shortid from "shortid";
 
 const ADD_LIST = "app/lists/ADD_LIST";
 
+// action creators
+export const addList = (payload) => ({ type: "ADD_LIST", payload });
 function listsReducer(statePart = [], action) {
   switch (action.type) {
     case ADD_LIST:
