@@ -10,7 +10,7 @@ export const getAllLists = (state) => state.lists;
 const ADD_LIST = "app/lists/ADD_LIST";
 
 // action creators
-export const addList = (payload) => ({ type: "ADD_LIST", payload });
+export const addList = (payload) => ({ type: ADD_LIST, payload });
 function listsReducer(statePart = [], action) {
   switch (action.type) {
     case ADD_LIST:
