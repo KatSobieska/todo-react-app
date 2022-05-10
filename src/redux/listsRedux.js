@@ -1,5 +1,12 @@
 import shortid from "shortid";
 
+// selectors
+
+export const getListById = ({ lists }, listId) =>
+  lists.find((list) => list.id === listId);
+
+export const getAllLists = (state) => state.lists;
+
 const ADD_LIST = "app/lists/ADD_LIST";
 
 // action creators
