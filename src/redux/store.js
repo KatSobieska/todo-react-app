@@ -11,15 +11,8 @@ export const getSearchString = (state) => state.searchString;
 
 //action creators
 
-export const addCard = (payload) => ({ type: "ADD_CARD", payload });
-
 export const updateSearchString = (payload) => ({
   type: "UPDATE_SEARCHSTRING",
-  payload,
-});
-
-export const toggleCardFavorite = (payload) => ({
-  type: "TOGGLE_CARD_FAVORITE",
   payload,
 });
 
