@@ -1,5 +1,4 @@
 import { createStore, combineReducers } from "redux";
-import shortid from "shortid";
 import initialState from "./initialState";
 import { strContains } from "../utils/strContains";
 import listsReducer from "./listsRedux";
