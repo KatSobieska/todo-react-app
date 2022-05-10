@@ -47,6 +47,7 @@ const reducer = (state, action) => {
     cards: cardsReducer(state.cards, action),
     searchString: searchStringReducer(state.searchString, action),
   };
+
   return newState;
 };
 
@@ -60,7 +61,7 @@ const listsReducer = (statePart = [], action) => {
 };
 
 const columnsReducer = (statePart = [], action) => {
-  switch (action.payload) {
+  switch (action.type) {
     case "ADD_COLUMN":
       return [...statePart, { ...action.payload, id: shortid() }];
     default:
@@ -69,7 +70,7 @@ const columnsReducer = (statePart = [], action) => {
 };
 
 const cardsReducer = (statePart = [], action) => {
-  switch (action.payload) {
+  switch (action.type) {
     case "ADD_CARD":
       return [...statePart, { ...action.payload, id: shortid() }];
     case "TOGGLE_CARD_FAVORITE":
@@ -84,7 +85,7 @@ const cardsReducer = (statePart = [], action) => {
 };
 
 const searchStringReducer = (statePart = "", action) => {
-  switch (action.payload) {
+  switch (action.type) {
     case "UPDATE_SEARCHSTRING":
       return action.payload;
     default:
