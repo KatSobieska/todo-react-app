@@ -9,13 +9,6 @@ import searchStringReducer from "./searchStringRedux";
 
 export const getSearchString = (state) => state.searchString;
 
-//action creators
-
-export const updateSearchString = (payload) => ({
-  type: "UPDATE_SEARCHSTRING",
-  payload,
-});
-
 const subreducers = {
   lists: listsReducer,
   columns: columnsReducer,
