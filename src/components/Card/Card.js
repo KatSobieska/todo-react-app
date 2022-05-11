@@ -18,12 +18,20 @@ const Card = (props) => {
   return (
     <li className={styles.card}>
       {props.title}
-      <button
-        className={clsx(styles.favoriteButton, isFavorite && styles.isFavorite)}
-        onClick={handleSubmit}
-      >
-        <span className="fa fa-star-o"></span>
-      </button>
+      <div className={styles.buttons}>
+        <button
+          className={clsx(
+            styles.favoriteButton,
+            isFavorite && styles.isFavorite
+          )}
+          onClick={handleSubmit}
+        >
+          <span className="fa fa-star-o"></span>
+        </button>
+        <button className={styles.removeButton} onClick={handleSubmit}>
+          <span className="fa fa-trash"></span>
+        </button>
+      </div>
     </li>
   );
 };
