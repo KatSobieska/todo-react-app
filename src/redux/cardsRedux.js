@@ -19,10 +19,13 @@ export const toggleCardFavorite = (payload) => ({
   payload,
 });
 
+export const removeCard = (payload) => ({ type: REMOVE_CARD, payload });
+
 // actions
 
 const TOGGLE_CARD_FAVORITE = "app/lists/TOGGLE_CARD_FAVORITE";
 const ADD_CARD = "app/lists/ADD_CARD";
+const REMOVE_CARD = "app/lists/REMOVE_CARD";
 
 const cardsReducer = (statePart = [], action) => {
   switch (action.type) {
@@ -34,6 +37,8 @@ const cardsReducer = (statePart = [], action) => {
           ? { ...card, isFavorite: !card.isFavorite }
           : card
       );
+    case REMOVE_CARD:
+      return statePart.filter((card) => card.id !== action.payload);
     default:
       return statePart;
   }
