@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { toggleCardFavorite } from "../../redux/cardsRedux";
+import { removeCard, toggleCardFavorite } from "../../redux/cardsRedux";
 import styles from "./Card.module.scss";
 import clsx from "clsx";
 
@@ -13,6 +13,11 @@ const Card = (props) => {
     e.preventDefault();
     setIsFavorite(!isFavorite);
     dispatch(toggleCardFavorite(cardId));
+  };
+
+  const handleRemove = (e) => {
+    e.preventDefault();
+    dispatch(removeCard(cardId));
   };
 
   return (
@@ -28,7 +33,7 @@ const Card = (props) => {
         >
           <span className="fa fa-star-o"></span>
         </button>
-        <button className={styles.removeButton} onClick={handleSubmit}>
+        <button className={styles.removeButton} onClick={handleRemove}>
           <span className="fa fa-trash"></span>
         </button>
       </div>
