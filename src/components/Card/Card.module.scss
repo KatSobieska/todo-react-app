@@ -29,3 +29,17 @@
 .isFavorite {
   color: $color-favorite-card;
 }
+
+.removeButton {
+  background-color: $color-light;
+  border: none;
+  span {
+    font-size: 16px;
+  }
+}
+
+.removeButton:hover {
+  span {
+    font-weight: 600;
+  }
+}
